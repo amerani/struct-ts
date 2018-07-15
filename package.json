@@ -1,7 +1,7 @@
 {
-  "name": "tsds",
+  "name": "dsts",
   "version": "0.1.0",
-  "description": "typescript data structures",
+  "description": "data structures in typescript",
   "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
