@@ -1,6 +1,6 @@
 interface IDoublyLinkedListNode<T> {
       value: T;
-      prev: IDoublyLinkedListNode<T> | null;
-      next: IDoublyLinkedListNode<T> | null;
+      prev?: IDoublyLinkedListNode<T>;
+      next?: IDoublyLinkedListNode<T>;
 }
 export default IDoublyLinkedListNode;

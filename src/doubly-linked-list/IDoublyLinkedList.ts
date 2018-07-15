@@ -1,22 +1,22 @@
 import IDoublyLinkedListNode from "./IDoublyLinkedListNode";
 
 interface IDoublyLinkedList<T> {
-      head: IDoublyLinkedListNode<T> | null;
-      tail: IDoublyLinkedListNode<T> | null;
+      head?: IDoublyLinkedListNode<T>;
+      tail?: IDoublyLinkedListNode<T>;
       length: number;
 
       of(collection: T[]): IDoublyLinkedList<T>;
       from(...values: T[]): IDoublyLinkedList<T>;
 
       push(value: T): IDoublyLinkedList<T>;
-      pop(): T|null;
+      pop(): T;
       unshift(value: T): IDoublyLinkedList<T>;
-      shift(): T|null;
+      shift(): T;
       insertBefore(node: IDoublyLinkedListNode<T>, value: T): IDoublyLinkedList<T>;
       insertAfter(node: IDoublyLinkedListNode<T>, value: T): IDoublyLinkedList<T>;
       remove(value: T): IDoublyLinkedList<T>;
       removeNode(node: IDoublyLinkedListNode<T>): IDoublyLinkedList<T>;
-      find(value: T): IDoublyLinkedListNode<T>|null;
+      find(value: T): IDoublyLinkedListNode<T>;
 }
 
 export default IDoublyLinkedList;

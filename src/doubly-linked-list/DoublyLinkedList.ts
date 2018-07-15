@@ -3,8 +3,8 @@ import IDoublyLinkedList from "./IDoublyLinkedList";
 import IDoublyLinkedListNode from "./IDoublyLinkedListNode";
 
 class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
-      public head: IDoublyLinkedListNode<T> | null;
-      public tail: IDoublyLinkedListNode<T> | null;
+      public head?: IDoublyLinkedListNode<T>;
+      public tail?: IDoublyLinkedListNode<T>;
       public length: number;
       constructor() {
             this.head = null;
@@ -33,7 +33,7 @@ class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
             return this;
       }
 
-      public pop(): T | null {
+      public pop(): T {
             if (this.tail === null) { return null; }
             const value = this.tail.value;
             this.removeNode(this.tail);
@@ -52,7 +52,7 @@ class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
             return this;
       }
 
-      public shift(): T | null {
+      public shift(): T {
             if (this.head === null) { return null; }
             const value = this.head.value;
             this.removeNode(this.head);
@@ -94,7 +94,7 @@ class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
             return this;
       }
 
-      public removeNode(node: IDoublyLinkedListNode<T> | null): IDoublyLinkedList<T> {
+      public removeNode(node: IDoublyLinkedListNode<T>): IDoublyLinkedList<T> {
             if (node === null) { return this; }
             if (node.prev == null) {
                   if (node.next !== null) {
@@ -116,7 +116,7 @@ class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
             return this;
       }
 
-      public find(value: T): IDoublyLinkedListNode<T> | null {
+      public find(value: T): IDoublyLinkedListNode<T> {
             if (this.length === 0) { return null; }
             let cur = this.head;
             while (cur) {

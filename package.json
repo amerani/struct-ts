@@ -4,7 +4,7 @@
   "description": "data structures in typescript",
   "main": "lib/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -d",
     "lint": "tslint src/**/*.ts __tests__/**/*.test.ts",
     "test": "jest"
   },
