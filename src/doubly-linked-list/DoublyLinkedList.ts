@@ -1,3 +1,7 @@
+import DoublyLinkedListNode from "./DoublyLinkedListNode";
+import IDoublyLinkedList from "./IDoublyLinkedList";
+import IDoublyLinkedListNode from "./IDoublyLinkedListNode";
+
 class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
       public head: IDoublyLinkedListNode<T> | null;
       public tail: IDoublyLinkedListNode<T> | null;

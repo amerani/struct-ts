@@ -1,8 +1,4 @@
-interface IDoublyLinkedListNode<T> {
-      value: T;
-      prev: IDoublyLinkedListNode<T> | null;
-      next: IDoublyLinkedListNode<T> | null;
-}
+import IDoublyLinkedListNode from "./IDoublyLinkedListNode";
 
 class DoublyLinkedListNode<T> implements IDoublyLinkedListNode<T> {
       public value: T;
@@ -14,3 +10,5 @@ class DoublyLinkedListNode<T> implements IDoublyLinkedListNode<T> {
             this.prev = null;
         }
 }
+
+export default DoublyLinkedListNode;
