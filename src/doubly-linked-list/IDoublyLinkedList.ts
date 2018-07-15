@@ -1,6 +1,6 @@
-import IDoublyLinkedListNode from "./IDoublyLinkedListNode";
+import {IDoublyLinkedListNode} from "./IDoublyLinkedListNode";
 
-interface IDoublyLinkedList<T> {
+export interface IDoublyLinkedList<T> {
       head?: IDoublyLinkedListNode<T>;
       tail?: IDoublyLinkedListNode<T>;
       length: number;
@@ -18,5 +18,3 @@ interface IDoublyLinkedList<T> {
       removeNode(node: IDoublyLinkedListNode<T>): IDoublyLinkedList<T>;
       find(value: T): IDoublyLinkedListNode<T>;
 }
-
-export default IDoublyLinkedList;

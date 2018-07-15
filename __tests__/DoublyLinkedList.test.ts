@@ -1,5 +1,4 @@
-import DoublyLinkedList from "../src/doubly-linked-list/DoublyLinkedList";
-import DoublyLinkedListNode from "../src/doubly-linked-list/DoublyLinkedListNode";
+import { DoublyLinkedList } from "../src";
 
 let classUnderTest: DoublyLinkedList<number>;
 

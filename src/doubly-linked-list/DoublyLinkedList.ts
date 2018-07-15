@@ -1,8 +1,8 @@
-import DoublyLinkedListNode from "./DoublyLinkedListNode";
-import IDoublyLinkedList from "./IDoublyLinkedList";
-import IDoublyLinkedListNode from "./IDoublyLinkedListNode";
+import {DoublyLinkedListNode} from "./DoublyLinkedListNode";
+import {IDoublyLinkedList} from "./IDoublyLinkedList";
+import {IDoublyLinkedListNode} from "./IDoublyLinkedListNode";
 
-class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
+export class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
       public head?: IDoublyLinkedListNode<T>;
       public tail?: IDoublyLinkedListNode<T>;
       public length: number;
@@ -126,5 +126,3 @@ class DoublyLinkedList<T> implements IDoublyLinkedList<T> {
             return cur;
       }
 }
-
-export default DoublyLinkedList;

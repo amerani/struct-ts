@@ -1,6 +1,6 @@
-import IDoublyLinkedListNode from "./IDoublyLinkedListNode";
+import {IDoublyLinkedListNode} from "./IDoublyLinkedListNode";
 
-class DoublyLinkedListNode<T> implements IDoublyLinkedListNode<T> {
+export class DoublyLinkedListNode<T> implements IDoublyLinkedListNode<T> {
       public value: T;
       public prev?: IDoublyLinkedListNode<T>;
       public next?: IDoublyLinkedListNode<T>;
@@ -10,5 +10,3 @@ class DoublyLinkedListNode<T> implements IDoublyLinkedListNode<T> {
             this.prev = null;
         }
 }
-
-export default DoublyLinkedListNode;
