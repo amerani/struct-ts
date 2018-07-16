@@ -1,6 +1,6 @@
 {
   "name": "struct-ts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "data structures in typescript",
   "main": "lib/index.js",
   "scripts": {
