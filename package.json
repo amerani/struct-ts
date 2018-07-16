@@ -1,6 +1,6 @@
 {
-  "name": "dsts",
-  "version": "0.1.0",
+  "name": "struct-ts",
+  "version": "0.1.1",
   "description": "data structures in typescript",
   "main": "lib/index.js",
   "scripts": {
@@ -33,5 +33,21 @@
     "testMatch": [
       "**/__tests__/*.test.ts"
     ]
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amerani/struct-ts.git"
+  },
+  "keywords": [
+    "typescript",
+    "data-structures",
+    "linked-list"
+  ],
+  "bugs": {
+    "url": "https://github.com/amerani/struct-ts/issues"
+  },
+  "homepage": "https://github.com/amerani/struct-ts#readme"
 }
