@@ -19,7 +19,7 @@ export class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             this.size = 0;
       }
 
-      public search(key: K, node?: IBinaryTreeNode<K, V>): IBinaryTreeNode<K, V> {
+      public search(key: K, node: IBinaryTreeNode<K, V>): IBinaryTreeNode<K, V> {
             if (node === null || node.key === key) { return node; }
             if (key < node.key) {
                   return this.search(key, node.left);
@@ -29,38 +29,25 @@ export class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
             }
       }
 
-      public insert(key: K, value: V, node: IBinaryTreeNode<K, V>): IBinaryTreeNode<K, V> {
+      public insert(key: K, value: V, node?: IBinaryTreeNode<K, V>): IBinaryTreeNode<K, V> {
             if (node == null) {
-                  const newNode = new BinaryTreeNode(key, value, null, null, node.parent);
-                  if(this.root === null) {
-                        this.root = newNode;
-                  }
+                  node = new BinaryTreeNode(key, value, null, null, node);
                   this.size += 1;
-                  return newNode;
+            } else if (key === node.key) {
+                  node.value = value;
+            } else if (key < node.key) {
+                  node.left = this.insert(key, value, node.left);
+                  node.left.parent = node;
+            } else {
+                  node.right = this.insert(key, value, node.right);
+                  node.right.parent = node;
             }
-            if (key === node.key) {
-                  return new BinaryTreeNode(key, value, node.left, node.right, node);
-            }
-            if (key < node.key) {
-                  return new BinaryTreeNode(
-                        node.key,
-                        node.value,
-                        this.insert(key, value, node.left),
-                        node.right,
-                        node,
-                  );
-            }
-            return new BinaryTreeNode(
-                  node.key,
-                  node.value,
-                  node.left,
-                  this.insert(key, value, node.right),
-                  node,
-            );
+            if (this.root == null) { this.root = node; }
+            return node;
       }
 
       public delete(key: K, node?: IBinaryTreeNode<K, V>): void {
-            if (node == null) return;
+            if (node == null) { return; }
             if (key < node.key) {
                   this.delete(key, node.left);
                   return;
@@ -78,7 +65,6 @@ export class BinarySearchTree<K, V> implements IBinarySearchTree<K, V> {
                   node.value = successor.value;
                   // delete successor
                   this.delete(successor.key, successor);
-                  this.size -= 1;
             } else if (node.left) {
                   // set node's parent to left child
                   this.replaceNodeParent(node, node.left);
